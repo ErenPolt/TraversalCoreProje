@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-    public class DestinationManager : IDestinationServlce
+    public class DestinationManager : IDestinationService
     {
         private readonly IDestinationDal _destinationDal;
 
@@ -30,7 +30,7 @@ namespace BusinessLayer.Concrete
 
         public Destination TGetById(int id)
         {
-            throw new NotImplementedException();
+            return _destinationDal.GetById(id);//Id!ye göre çağırma işlemi
         }
 
         public List<Destination> TGetList()
