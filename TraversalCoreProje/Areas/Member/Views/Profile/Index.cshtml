@@ -5,7 +5,7 @@
 }
 
 <h3>Profil Düzenleme Sayfası</h3>
-<form method="post">
+<form method="post" enctype="multipart/form-data"> @* Dosya kaydetme işlemi yapacağpımız içi;  enctype="multipart/form-data" ekliyoruz... *@
     @Html.Label("Adınız")
     <input type="text" asp-for="name" class="form-control"/>
     <br />
@@ -24,5 +24,11 @@
     @Html.Label("Telefon Numarası")
     <input type="text" asp-for="phonenumber" class="form-control" />
     <br />
+    <div class="form-group">
+        <label>Resim Seçin</label>
+        <input type="file" asp-for="Image" />
+    </div>
+    <br />
+    <button class="btn btn-info">Bilgileri Güncelle</button>
 </form>
 
