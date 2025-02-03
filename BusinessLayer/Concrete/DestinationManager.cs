@@ -20,7 +20,7 @@ namespace BusinessLayer.Concrete
 
         public void TAdd(Destination entity)
         {
-            throw new NotImplementedException();
+            _destinationDal.Insert(entity);
         }
 
         public void TDelete(Destination entity)

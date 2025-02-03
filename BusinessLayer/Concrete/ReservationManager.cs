@@ -18,9 +18,19 @@ namespace BusinessLayer.Concrete
             _reservationDal = reservationDal;
         }
 
-        public List<Reservation> GetListApprovalReservation(int id)//Şartlı listeleme..
+        public List<Reservation> GetListWithReservationByAccepted(int id)//Şartlı listeleme..(onaylanan rezervasyon)
         {
-            return _reservationDal.GetListByFilter(x=>x.AppUserId == id && x.Status == "Onay Bekliyor");
+            return _reservationDal.GetListWithReservationByAccepted(id);
+        }
+
+        public List<Reservation> GetListWithReservationByPrevious(int id)//Şartlı listeleme..(geçmiş rezervasyon)
+        {
+            return _reservationDal.GetListWithReservationByPrevious(id);
+        }
+
+        public List<Reservation> GetListWithReservationByWaitApproval(int id)//Şartlı listeleme..(onay bekleyen)
+        {
+            return _reservationDal.GetListWithReservationByWaitApproval(id);
         }
 
         public void TAdd(Reservation entity)//Ekleme işlemi
