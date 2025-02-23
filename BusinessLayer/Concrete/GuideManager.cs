@@ -18,19 +18,29 @@ namespace BusinessLayer.Concrete
             _guideDal = guideDal;
         }
 
-        public void TAdd(Guide entity)
+        public void TAdd(Guide entity)//Ekleme işlemi
         {
-            throw new NotImplementedException();
+           _guideDal.Insert(entity);
+        }
+
+        public void TChangeToFalseByGuide(int id)//Pasif Yap
+        {
+            _guideDal.ChangeToFalseByGuide(id);
+        }
+
+        public void TChangeToTrueByGuide(int id)//Aktif Yap
+        {
+            _guideDal.ChangeToTrueByGuide(id);
         }
 
         public void TDelete(Guide entity)
         {
-            throw new NotImplementedException();
+            _guideDal.Delete(entity);
         }
 
-        public Guide TGetById(int id)
+        public Guide TGetById(int id)//Id'ye göre işlem
         {
-            throw new NotImplementedException();
+           return _guideDal.GetById(id);
         }
 
         public List<Guide> TGetList()//Listeleme işlemi;
@@ -38,9 +48,9 @@ namespace BusinessLayer.Concrete
             return _guideDal.GetList();
         }
 
-        public void TUpdate(Guide entity)
+        public void TUpdate(Guide entity)//Güncelleme işlemi
         {
-            throw new NotImplementedException();
+            _guideDal.Update(entity);
         }
     }
 }

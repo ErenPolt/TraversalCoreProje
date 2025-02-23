@@ -7,9 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IGuideDal : IGenericDal<Guide>
+    public interface IAppUserDal: IGenericDal<AppUser>
     {
-        void ChangeToTrueByGuide(int id);//REhberi Aktif Yap
-        void ChangeToFalseByGuide(int id);//REhberi Pasif Yap
     }
 }

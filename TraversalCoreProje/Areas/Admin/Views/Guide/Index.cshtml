@@ -1,0 +1,57 @@
+﻿@model List<Guide>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<style>
+    img{
+        border-radius:50%;
+    }
+</style>
+
+<h3>Rehberlerimiz</h3>
+ <table class="table table-bordred">
+     <tr>
+         <th>#</th>
+         <th>Görsel</th>
+         <th>Ad Soyad</th>
+         <th>Açıklama</th>
+         <th>Durum</th>
+         <th>Sil</th>
+         <th>Düzenle</th> 
+     </tr>
+
+    @foreach(var item in Model)
+    {
+        count++;
+        <tr>
+            <td>@count</td>
+            <td><img src="@item.Image" height="50" width="50"/></td>
+            <td>@item.Name</td>
+            <td>@item.Description</td>
+         
+                @{
+                    if(item.Status == true)//Eğer durum true ise
+                    {
+                    <td>
+                        <a href="/Admin/Guide/ChangeToFalse/@item.GuideId" class="btn btn-outline-danger">Pasif Yap</a>
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        <a href="/Admin/Guide/ChangeToTrue/@item.GuideId" class="btn btn-outline-success">Aktif Yap</a>
+                    </td>
+                }
+                
+                }
+
+
+            <td><a href="/Admin/Guide/DeleteGuide/@item.GuideId" class="btn btn-outline-warning">Sil</a></td>
+            <td><a href="/Admin/Guide/EditGuide/" class="btn btn-outline-info">Düzenle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Admin/Guide/AddGuide/" class="btn btn-outline-primary">Yeni Rehber Girişi</a>

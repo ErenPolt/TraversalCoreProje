@@ -9,5 +9,6 @@ namespace DataAccessLayer.Abstract
 {
   public interface ICommentDal: IGenericDal<Comment>
     {
+        List<Comment> GetListCommentWithDestination();//Yorum listesini getirme işlemi için ICommenyDal' da tanımlama yapıyoruz. EF kısmında çağırma işlemi yapacağız<z..
     }
 }

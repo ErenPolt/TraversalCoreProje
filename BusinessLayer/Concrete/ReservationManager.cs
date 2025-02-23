@@ -50,7 +50,7 @@ namespace BusinessLayer.Concrete
 
         public List<Reservation> TGetList()
         {
-            throw new NotImplementedException();
+           return _reservationDal.GetList();
         }
 
         public void TUpdate(Reservation entity)

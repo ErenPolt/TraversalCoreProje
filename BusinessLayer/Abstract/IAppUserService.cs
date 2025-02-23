@@ -7,9 +7,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Abstract
 {
-    public interface IGuideService : IGenericService<Guide>
+    public interface IAppUserService: IGenericService<AppUser>
     {
-        void TChangeToTrueByGuide(int id);//REhberi Aktif Yap
-        void TChangeToFalseByGuide(int id);//REhberi Pasif Yap
     }
 }

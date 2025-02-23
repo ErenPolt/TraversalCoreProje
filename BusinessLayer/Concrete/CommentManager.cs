@@ -23,19 +23,19 @@ namespace BusinessLayer.Concrete
             _commentDal.Insert(entity);
         }
 
-        public void TDelete(Comment entity)
+        public void TDelete(Comment entity)//Silme işlemi
         {
-            throw new NotImplementedException();
+           _commentDal.Delete(entity);
         }
 
-        public Comment TGetById(int id)
+        public Comment TGetById(int id)//Id'ye göre işlem yapma
         {
-            throw new NotImplementedException();
+           return _commentDal.GetById(id);
         }
 
-        public List<Comment> TGetList()
+        public List<Comment> TGetList()//Listeleme işlemi
         {
-            throw new NotImplementedException();
+            return _commentDal.GetList();
         }
 
         public List<Comment> TGetDestinationById(int id)
@@ -46,6 +46,11 @@ namespace BusinessLayer.Concrete
         public void TUpdate(Comment entity)
         {
             throw new NotImplementedException();
+        }
+
+        public List<Comment> TGetListCommentWithDestination()//Destination tablosnu admin sayfasında ilişki içinde; listelme işlemi..
+        {
+            return _commentDal.GetListCommentWithDestination();
         }
     }
 }
