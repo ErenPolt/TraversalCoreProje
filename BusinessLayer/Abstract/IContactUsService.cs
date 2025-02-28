@@ -9,5 +9,8 @@ namespace BusinessLayer.Abstract
 {
     public interface IContactUsService: IGenericService<ContactUs>
     {
+        List<ContactUs> TGetListContactUsByTrue();//True olanlar
+        List<ContactUs> TGetListContactUsByFalse();//False olanlar
+        void TContactUsStatusChangeToFalse(int id);//False Yap
     }
 }

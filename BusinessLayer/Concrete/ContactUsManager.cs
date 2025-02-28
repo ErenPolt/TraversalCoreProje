@@ -23,6 +23,11 @@ namespace BusinessLayer.Concrete
             _contactUsDal.Insert(entity);
         }
 
+        public void TContactUsStatusChangeToFalse(int id)//False Yap
+        {
+            throw new NotImplementedException();
+        }
+
         public void TDelete(ContactUs entity)//Silme İşlemi
         {
             throw new NotImplementedException();
@@ -36,6 +41,16 @@ namespace BusinessLayer.Concrete
         public List<ContactUs> TGetList()//Listeleme 
         {
            return _contactUsDal.GetList();
+        }
+
+        public List<ContactUs> TGetListContactUsByFalse()//False Olanları listele
+        {
+           return _contactUsDal.GetListContactUsByFalse();
+        }
+
+        public List<ContactUs> TGetListContactUsByTrue()//True olanalrı listele
+        {
+           return _contactUsDal.GetListContactUsByTrue();
         }
 
         public void TUpdate(ContactUs entity)//Güncelleme

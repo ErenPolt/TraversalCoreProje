@@ -16,7 +16,7 @@ namespace TraversalCoreProje.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
-            var values = _contactUsService.TGetList();
+            var values = _contactUsService.TGetListContactUsByTrue();//Bana durumu true olanları listele
             return View(values);
         }
     }
